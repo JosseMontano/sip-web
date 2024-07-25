@@ -48,7 +48,7 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
   return (
     <Container onClick={onClose}>
       <Content onClick={(e) => e.stopPropagation()}>
-        <CloseButton onClick={onClose}>&times;</CloseButton>
+        <CloseButton onClick={onClose} data-testid="close-button">&times;</CloseButton>
         {children}
       </Content>
     </Container>
