@@ -2,7 +2,6 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteCompany, getCompanies } from "./api/companyApi";
 import CompanyForm from "./components/form";
 import { CompanyResponse } from "./interface/companyRes";
-import { css } from "@emotion/css";
 
 
 const Company = () => {
@@ -30,9 +29,6 @@ const Company = () => {
 
   return (
     <div
-      className={css`
-        text-align: center;
-      `}
     >
       <CompanyForm />
 

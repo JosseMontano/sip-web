@@ -1,0 +1,1 @@
+export const borderRadiusCard = '8px';
