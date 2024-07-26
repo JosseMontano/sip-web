@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 const PublicNavigation = () => {
   return (
     <>
-      <div>navbar public</div>
+      <div>navbar public test</div>
       <Outlet />
     </>
   );
