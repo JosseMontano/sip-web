@@ -29,8 +29,8 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
     - name: INSTALLING firebase
-    - run: npm i --global firebase-tools
+      run: npm i --global firebase-tools
     - name: DEPLOYING firebase
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-    - run: firebase deploy
+      run: firebase deploy
