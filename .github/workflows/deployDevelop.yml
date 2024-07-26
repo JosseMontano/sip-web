@@ -24,8 +24,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: pnpm i
+        cache: 'pnpm'
+    - run: npm i -g pnpm
+    - run: pnpm install
     - run: pnpm build --if-present
     - run: pnpm test
     - name: INSTALLING firebase
