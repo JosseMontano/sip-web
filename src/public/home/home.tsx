@@ -1,15 +1,6 @@
 import { useState } from "react";
 import Modal from "../../common/components/modal/modal";
-import styled from "@emotion/styled";
 import ButtonJSX from "../../common/components/button/button";
-
-const Btn = styled.button`
-  border: none;
-  background-color: #38c02ce0;
-  padding: 15px;
-  border-radius: 10px;
-  color: white;
-`;
 
 const Home = () => {
   const [isModalOpen, setModalOpen] = useState(false);
