@@ -11,7 +11,7 @@ const Btn = styled.button`
 
 type ParamsType={
     msg: string;
-    onClick: () => void;
+    onClick?: () => void;
 }
 
 const ButtonJSX = ({msg, onClick}:ParamsType) => {
