@@ -6,6 +6,7 @@ import ButtonJSX from "../../common/components/button/button";
 import Modal from "../../common/components/modal/modal";
 import { loginSchema } from "./validations/signIn";
 import { LoginType } from "./interfaces/login";
+import Header from "./components/header/header";
 
 const Input = styled.input<{ error?: string }>`
   border: 1px solid ${(props) => (props.error ? "red" : "black")};
@@ -31,9 +32,7 @@ const Website = () => {
 
   return (
     <div>
-      <p>welcome to home</p>
-
-      <ButtonJSX msg={"login"} onClick={openModal} />
+      {/*       <ButtonJSX msg={"login"} onClick={openModal} />
       <Modal
         isOpen={isModalOpen}
         onClose={closeModal}
@@ -47,7 +46,8 @@ const Website = () => {
             <ButtonJSX msg={"submit"} />
           </form>
         }
-      />
+      /> */}
+      <Header />
     </div>
   );
 };

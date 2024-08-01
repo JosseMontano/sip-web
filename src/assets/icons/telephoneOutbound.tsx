@@ -2,7 +2,7 @@ type ParamsType = {
   size: string;
 };
 
-const BagIcon = ({ size }: ParamsType) => {
+const TelephoneOutbound = ({ size }: ParamsType) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,4 +17,4 @@ const BagIcon = ({ size }: ParamsType) => {
   );
 };
 
-export default BagIcon;
+export default TelephoneOutbound;

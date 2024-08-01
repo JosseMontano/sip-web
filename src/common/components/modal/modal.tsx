@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { borderRadiusCard } from "../../constants/border";
+import { borderRadiusCard } from "../../constants/borders";
 
 interface ModalProps {
   isOpen: boolean;

@@ -10,7 +10,7 @@ const Btn = styled.button`
 `;
 
 type ParamsType={
-    msg: string;
+    msg: string | JSX.Element;
     onClick?: () => void;
 }
 
