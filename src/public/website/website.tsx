@@ -1,19 +1,19 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import styled from "@emotion/styled";
-import { zodResolver } from "@hookform/resolvers/zod";
-import ButtonJSX from "../../common/components/button/button";
-import Modal from "../../common/components/modal/modal";
-import { loginSchema } from "./validations/signIn";
-import { LoginType } from "./interfaces/login";
+/* import { useState } from "react";
+import { useForm } from "react-hook-form"; */
+/* import styled from "@emotion/styled"; */
+/* import { zodResolver } from "@hookform/resolvers/zod"; */
+/* import ButtonJSX from "../../common/components/button/button";
+import Modal from "../../common/components/modal/modal"; */
+/* import { loginSchema } from "./validations/signIn";
+import { LoginType } from "./interfaces/login"; */
 import Header from "./components/header/header";
 
-const Input = styled.input<{ error?: string }>`
+/* const Input = styled.input<{ error?: string }>`
   border: 1px solid ${(props) => (props.error ? "red" : "black")};
-`;
+`; */
 
 const Website = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
+/*   const [isModalOpen, setModalOpen] = useState(false);
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
 
@@ -28,7 +28,7 @@ const Website = () => {
 
   const onSubmit = (data: LoginType) => {
     console.log(data);
-  };
+  }; */
 
   return (
     <div>
