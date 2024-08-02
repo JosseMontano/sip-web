@@ -1,11 +1,18 @@
-import Navbar from "./navbar";
+import Home from "./home/home";
+import Navbar from "./navbar/navbar";
+import styled from "@emotion/styled";
+
+const Container = styled.div`
+
+  `;
 
 type ParamsType = {};
 const Header = ({}: ParamsType) => {
   return (
-    <div>
+    <Container>
       <Navbar />
-    </div>
+      <Home />
+    </Container>
   );
 };
 

@@ -1,15 +1,14 @@
 import styled from "@emotion/styled";
-import { secondaryColor } from "../../../../common/constants/colors";
-import ContentUl from "./navbar/contentUl";
-import ContentIcons from "./navbar/contentIcons";
-import ContentImg from "./navbar/contentImg";
+import ContentUl from "./contentUl";
+import ContentIcons from "./contentIcons";
+import ContentImg from "./contentImg";
 
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: ${secondaryColor};
+  z-index: 999;
   @media (width <= 630px) {
     justify-content: space-evenly;
   }
