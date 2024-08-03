@@ -6,14 +6,16 @@ import { useForm } from "react-hook-form"; */
 import Modal from "../../common/components/modal/modal"; */
 /* import { loginSchema } from "./validations/signIn";
 import { LoginType } from "./interfaces/login"; */
+import Categories from "./components/categories/categories";
 import Header from "./components/header/header";
+import Products from "./components/products/products";
 
 /* const Input = styled.input<{ error?: string }>`
   border: 1px solid ${(props) => (props.error ? "red" : "black")};
 `; */
 
 const Website = () => {
-/*   const [isModalOpen, setModalOpen] = useState(false);
+  /*   const [isModalOpen, setModalOpen] = useState(false);
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
 
@@ -48,6 +50,8 @@ const Website = () => {
         }
       /> */}
       <Header />
+      <Categories />
+      <Products />
     </div>
   );
 };

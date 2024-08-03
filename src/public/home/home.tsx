@@ -1,4 +1,4 @@
-import BaseCC from "../../common/components/categoryCollection/baseCC";
+import BaseCC from "../website/components/categories/categories";
 
 const Home = () => {
   return (

@@ -5,7 +5,7 @@ const Btn = styled.button`
   border: none;
   background-color: ${primaryColor};
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 25px;
   color: white;
 `;
 
