@@ -7,6 +7,11 @@ const Container = styled.div`
     margin-left: 300px;
     padding: 20px;
   }
+  @media (width<=800px) {
+    .content{
+      margin-left: 100px;
+    }
+  }
 `
 
 const PrivateNavigation = () => {

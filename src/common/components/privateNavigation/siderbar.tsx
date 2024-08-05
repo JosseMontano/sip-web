@@ -31,6 +31,12 @@ const Container = styled.div`
       font-size: 28px;
     }
   }
+  @media (width<=800px) {
+    width: 100px;
+   .header h1{
+    display: none;
+   }
+  }
 `;
 
 const Links = styled.div`
@@ -50,6 +56,12 @@ const Section = styled.section<{ active: boolean }>`
   border-radius: ${borderRadiusCard};
   padding: 10px;
   color: ${(props) => (props.active ? "white" : thirdMandatoryColor)};
+  @media (width<=800px) {
+    justify-content: center;
+    span{
+        display: none;
+    }
+  }
 `;
 
 const Sidebar = () => {
