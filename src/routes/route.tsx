@@ -4,6 +4,7 @@ import PrivateNavigation from "../common/components/privateNavigation/privateNav
 import Company from "../dashboard/company/company";
 import Website from "../public/website/website";
 import NotFound from "../public/notFound/notFound";
+import Users from "../dashboard/users/users";
 
 type Route = {
   path: string;
@@ -35,8 +36,12 @@ export const createRoutes = (): Route[] => {
       element: <PrivateNavigation />,
       children: [
         {
-          path: "company",
+          path: "companies",
           element: <Company />,
+        },
+        {
+          path: "users",
+          element: <Users />,
         },
       ],
     },

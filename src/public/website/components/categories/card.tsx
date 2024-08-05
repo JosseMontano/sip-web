@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import { firstMandatoryColor } from "../../../../../common/constants/colors";
+import { firstMandatoryColor } from "../../../../common/constants/colors";
 
-const Card = styled.div`
+const Container = styled.div`
   width: 240px;
   height: 240px;
   display: flex;
@@ -46,17 +46,17 @@ type Props = {
   categoryQuantityPlaces: string;
 };
 
-const CardCCStyle = (props: Props) => {
+export const Card = (props: Props) => {
   const { categoryQuantityPlaces, categoryTitle, imageUrl } = props;
   return (
-    <Card>
-      <Image src={imageUrl} alt="AlternativeSourceImage" />
+    <Container>
+      <Image src={imageUrl} alt="AlternativeSourceImage" title="img" />
       <TextContainer>
         <h2>{categoryTitle}</h2>
         <span>{categoryQuantityPlaces}</span>
       </TextContainer>
-    </Card>
+    </Container>
   );
 };
 
-export default CardCCStyle;
+

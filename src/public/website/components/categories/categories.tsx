@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-import CardCCStyle from "./components/card";
+import {Card} from "./card";
+
 
 const Container = styled.div`
   display: flex;
@@ -28,22 +29,22 @@ const Categories = () => {
       <span>Elección de los Clientes</span>
       <h2>Categorías Populares</h2>
       <SubContainer>
-        <CardCCStyle
+        <Card
           imageUrl={img}
           categoryTitle="Platillo Principal"
           categoryQuantityPlaces="(10 lugares)"
         />
-        <CardCCStyle
+        <Card
           imageUrl={img}
           categoryTitle="Desayunos"
           categoryQuantityPlaces="(8 lugares)"
         />
-        <CardCCStyle
+        <Card
           imageUrl={img}
           categoryTitle="Postres"
           categoryQuantityPlaces="(5 lugares)"
         />
-        <CardCCStyle
+        <Card
           imageUrl={img}
           categoryTitle="Cualquier Platillo"
           categoryQuantityPlaces="(23 lugares)"
