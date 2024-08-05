@@ -1,12 +1,14 @@
 type ParamsType = {
   size: string;
+  color?: string;
 };
-export const UserIcon = ({ size }: ParamsType) => {
+export const UserIcon = ({ size,color }: ParamsType) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
+      style={{ color: color }}
       fill="currentColor"
       className="bi bi-people"
       viewBox="0 0 16 16"

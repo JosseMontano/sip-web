@@ -3,14 +3,22 @@ import styled from "@emotion/styled";
 import Sidebar from "./siderbar";
 
 const Container = styled.div`
-  .content{
+  background-color: #f2f6fc;
+
+`;
+
+const Content = styled.div`
+ 
     margin-left: 300px;
     padding: 20px;
+    h3{
+      margin-bottom: 30px;
+    }
+    @media (width<=900px) {
+      margin-left: 200px;
   }
   @media (width<=800px) {
-    .content{
       margin-left: 100px;
-    }
   }
 `
 
@@ -18,10 +26,10 @@ const PrivateNavigation = () => {
   return (
     <Container>
       <Sidebar />
-      <div className="content">
+      <Content>
         <h3>Hello Jose 👋,</h3>
-      <Outlet />
-      </div>
+        <Outlet />
+      </Content>
     </Container>
   );
 };

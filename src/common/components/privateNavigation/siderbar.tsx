@@ -3,6 +3,7 @@ import {
   firstMandatoryColor,
   thirdMandatoryColor,
   primaryColor,
+  primaryColorDash,
 } from "../../constants/colors";
 
 import UseRouter from "../../hooks/useRouter";
@@ -31,6 +32,12 @@ const Container = styled.div`
       font-size: 28px;
     }
   }
+  @media (width<=900px) {
+    width: 200px;
+    .header h1{
+      font-size: 22px;
+   }
+  }
   @media (width<=800px) {
     width: 100px;
    .header h1{
@@ -52,7 +59,7 @@ const Section = styled.section<{ active: boolean }>`
   gap: 10px;
   font-weight: 500;
   cursor: pointer;
-  background-color: ${(props) => (props.active ? primaryColor : "transparent")};
+  background-color: ${(props) => (props.active ? primaryColorDash : "transparent")};
   border-radius: ${borderRadiusCard};
   padding: 10px;
   color: ${(props) => (props.active ? "white" : thirdMandatoryColor)};
