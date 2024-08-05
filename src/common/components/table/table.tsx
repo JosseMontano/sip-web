@@ -3,7 +3,6 @@ import {
   active1,
   active2,
   firstMandatoryColor,
-  fourthMandatoryColor,
   inactive1,
   inactive2,
   thirdMandatoryColor,

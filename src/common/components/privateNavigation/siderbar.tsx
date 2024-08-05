@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import {
   firstMandatoryColor,
   thirdMandatoryColor,
-  primaryColor,
   primaryColorDash,
 } from "../../constants/colors";
 

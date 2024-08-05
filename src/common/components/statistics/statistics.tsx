@@ -62,8 +62,8 @@ const Content = styled.div`
 
 type ParamsType = {};
 export const Statistics = ({}: ParamsType) => {
-    const { width, height } = useWindowDimensions();
-console.log(width);
+    const { width } = useWindowDimensions();
+
   return (
     <Container>
       <Card>
