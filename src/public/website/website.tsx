@@ -9,6 +9,7 @@ import { LoginType } from "./interfaces/login"; */
 import Categories from "./components/categories/categories";
 import Header from "./components/header/header";
 import Products from "./components/products/products";
+import QuickForm from "./components/quickForm/quickForm";
 
 /* const Input = styled.input<{ error?: string }>`
   border: 1px solid ${(props) => (props.error ? "red" : "black")};
@@ -51,7 +52,9 @@ const Website = () => {
       /> */}
       <Header />
       <Categories />
-      <Products />
+      {/*<Products />*/}
+
+      <QuickForm />
     </div>
   );
 };

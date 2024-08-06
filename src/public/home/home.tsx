@@ -1,9 +1,10 @@
-import BaseCC from "../website/components/categories/categories";
+//import BaseCC from "../website/components/categories/categories";
+//import Button from "../../common/components/button/button.tsx";
 
 const Home = () => {
   return (
     <div>
-      <BaseCC />
+    
     </div>
   );
 };
