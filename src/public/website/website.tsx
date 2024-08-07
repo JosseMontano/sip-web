@@ -8,7 +8,7 @@ import Modal from "../../common/components/modal/modal"; */
 import { LoginType } from "./interfaces/login"; */
 import Categories from "./components/categories/categories";
 import Header from "./components/header/header";
-import Products from "./components/products/products";
+//import Products from "./components/products/products";
 import QuickForm from "./components/quickForm/quickForm";
 
 /* const Input = styled.input<{ error?: string }>`
