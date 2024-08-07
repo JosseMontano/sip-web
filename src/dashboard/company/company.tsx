@@ -1,13 +1,14 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import styled from "@emotion/styled";
-import { createCompany, deleteCompany, getCompanies } from "./api/companyApi";
+import { createCompany, deleteCompany, getCompanies, getStatistics } from "./api/companyApi";
 import CompanyForm from "./components/form";
 import { CompanyResponse } from "./interface/companyRes";
 import { Statistics } from "../../common/components/statistics/statistics";
 import { Table } from "../../common/components/table/table";
 import Modal from "../../common/components/modal/modal";
 import { CompanyDTO } from "./interface/companyDTO";
+import { StatisticsResponse } from "./interface/statisticsRes";
 
 const Container = styled.div`
   display: flex;
@@ -28,6 +29,11 @@ const Company = () => {
     queryFn: () => getCompanies(),
   });
 
+  const { data: totalInfo } = useQuery<StatisticsResponse>({
+    queryKey: ["companies-statistics"],
+    queryFn: () => getStatistics(),
+  });
+
   const { mutate } = useMutation({
     mutationFn: createCompany,
     onSuccess: () => {
@@ -39,6 +45,8 @@ const Company = () => {
     mutationFn: deleteCompany,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["companies"] });
+      queryClient.invalidateQueries({ queryKey: ["companies-statistics"] });
+
     },
   });
 
@@ -57,7 +65,10 @@ const Company = () => {
 
   return (
     <Container>
-      <Statistics />
+      {totalInfo?.data != undefined && (
+        <Statistics table="compañias" total={totalInfo?.data}/>
+      )}
+
 
       {companies?.data != undefined && (
         <>

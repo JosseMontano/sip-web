@@ -7,6 +7,10 @@ const Btn = styled.button`
   padding: 15px;
   border-radius: 25px;
   color: white;
+  @media (width<=460px) {
+    padding: 10px;
+    font-size: 13px;
+  }
 `;
 
 type ParamsType={

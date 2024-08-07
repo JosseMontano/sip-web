@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { Statistics } from "../../common/components/statistics/statistics";
 import { Table } from "../../common/components/table/table";
 
 const Container = styled.div`
@@ -17,13 +16,14 @@ const Users = ({}: ParamsType) => {
   ];
   return (
     <Container>
-      <Statistics />
+ {/*      <Statistics /> */}
       <Table
         cols={cols}
         data={users}
         title="Todos los usuarios"
         subtitle="Añadir un nuevo usuario"
         createData={() => alert("create user")}
+        deleteData={() => alert("delete user")}
       />
     </Container>
   );

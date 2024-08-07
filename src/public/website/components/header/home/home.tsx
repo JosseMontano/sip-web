@@ -11,7 +11,6 @@ import TriangleRight from "../../../../../assets/icons/triangleRight";
 import PizzaImg from "../../../assets/pizza.jpg";
 import EnsaladaImg from "../../../assets/ensalada.jpg";
 import StarFillIcon from "../../../../../assets/icons/starFill";
-import { icons } from "../../../../../common/constants/icons";
 import {
   borderImg,
   borderRadiusCard,
@@ -81,6 +80,18 @@ const Col1 = styled.div`
       }
     }
   }
+
+  @media (width<=460px) {
+    .content_col1 {
+      width: 330px;
+      h1 {
+        font-size: 32px;
+      }
+      .description {
+        font-size: 15px;
+      }
+    }
+  }
 `;
 
 const Col2 = styled.div`
@@ -113,6 +124,10 @@ const Col2 = styled.div`
     gap: 20px;
     position: absolute;
     bottom: 10px;
+    @media (width <= 460px) {
+      width: 350px;
+      gap: 10px;
+    }
   }
 `;
 
@@ -140,8 +155,10 @@ const Card = styled.div`
   }
 `;
 
-type ParamsType = {};
-const Home = ({}: ParamsType) => {
+type ParamsType = {
+  sizeIcons: () => string
+};
+const Home = ({sizeIcons}: ParamsType) => {
   return (
     <Container>
       <Col1>
@@ -149,7 +166,7 @@ const Home = ({}: ParamsType) => {
           <h1>
             Dive into Delights of delectable <span>food</span>
           </h1>
-          <span>
+          <span className="description">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
           </span>
@@ -174,11 +191,11 @@ const Home = ({}: ParamsType) => {
             <div>
               <h3>Pizza</h3>
               <p>
-                <StarFillIcon size={icons.size} color={starColor} />
-                <StarFillIcon size={icons.size} color={starColor} />
-                <StarFillIcon size={icons.size} color={starColor} />
-                <StarIcon size={icons.size} />
-                <StarIcon size={icons.size} />
+                <StarFillIcon size={sizeIcons()} color={starColor} />
+                <StarFillIcon size={sizeIcons()} color={starColor} />
+                <StarFillIcon size={sizeIcons()} color={starColor} />
+                <StarIcon size={sizeIcons()} />
+                <StarIcon size={sizeIcons()} />
               </p>
               <span>Bs 18</span>
             </div>
@@ -188,11 +205,11 @@ const Home = ({}: ParamsType) => {
             <div>
               <h3>Pizza</h3>
               <p>
-                <StarFillIcon size={icons.size} color={starColor} />
-                <StarFillIcon size={icons.size} color={starColor} />
-                <StarFillIcon size={icons.size} color={starColor} />
-                <StarFillIcon size={icons.size} color={starColor} />
-                <StarIcon size={icons.size} />
+                <StarFillIcon size={sizeIcons()} color={starColor} />
+                <StarFillIcon size={sizeIcons()} color={starColor} />
+                <StarFillIcon size={sizeIcons()} color={starColor} />
+                <StarFillIcon size={sizeIcons()} color={starColor} />
+                <StarIcon size={sizeIcons()} />
               </p>
               <span>Bs 18</span>
             </div>

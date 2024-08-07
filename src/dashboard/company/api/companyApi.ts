@@ -7,6 +7,12 @@ export const getCompanies = async () => {
     return data
 }
 
+export const getStatistics = async () => {
+    const response = await fetch(URLS.baseUrl + 'companies/statistics')
+    const data = await response.json()
+    return data
+}
+
 export const createCompany = async (company: CompanyDto) => {
     const response = await fetch(URLS.baseUrl + 'companies', {
         method: 'POST',

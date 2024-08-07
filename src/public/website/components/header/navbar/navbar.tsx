@@ -14,15 +14,17 @@ const Container = styled.div`
   }
 `;
 
-type ParamsType = {};
+type ParamsType = {
+  sizeIcons: () => string
+};
 
-const Navbar = ({}: ParamsType) => {
+const Navbar = ({sizeIcons}: ParamsType) => {
   return (
     <Container>
       <ContentImg />
       <ContentUl />
 
-      <ContentIcons />
+      <ContentIcons sizeIcons={sizeIcons}/>
     </Container>
   );
 };

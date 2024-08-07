@@ -8,10 +8,11 @@ import {
 } from "../../constants/colors";
 import { borderRadiusCard } from "../../constants/borders";
 import { useWindowDimensions } from "../../hooks/useWindowDimension";
+import { StatisticsRes } from "./interfaces/StatisticsRes";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns:repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
   @media (width<=450px) {
     & > * {
@@ -40,6 +41,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-transform: capitalize;
   h2 {
     font-size: 13px;
     color: ${thirdMandatoryColor};
@@ -50,19 +52,22 @@ const Content = styled.div`
     font-weight: bold;
   }
   @media (width<=630px) {
-   
-    h2{
-        font-size: 10px;
+    h2 {
+      font-size: 10px;
     }
-    p{
-        font-size: 18px;
+    p {
+      font-size: 18px;
     }
   }
 `;
 
-type ParamsType = {};
-export const Statistics = ({}: ParamsType) => {
-    const { width } = useWindowDimensions();
+
+type ParamsType = {
+  table: string;
+  total:StatisticsRes
+};
+export const Statistics = ({ table, total }: ParamsType) => {
+  const { width } = useWindowDimensions();
 
   return (
     <Container>
@@ -71,8 +76,8 @@ export const Statistics = ({}: ParamsType) => {
           <UserIcon size={width >= 630 ? "35px" : "22px"} color={active1} />
         </ContentImg>
         <Content>
-          <h2>Total Users</h2>
-          <p>100</p>
+          <h2>Total de {table}</h2>
+          <p>{total.totalData}</p>
         </Content>
       </Card>
       <Card>
@@ -80,8 +85,8 @@ export const Statistics = ({}: ParamsType) => {
           <UserIcon size={width >= 630 ? "35px" : "22px"} color={active1} />
         </ContentImg>
         <Content>
-          <h2>Total Users</h2>
-          <p>100</p>
+          <h2>{table} habilitados</h2>
+          <p>{total.totalDataAuthorized}</p>
         </Content>
       </Card>
       <Card>
@@ -89,8 +94,8 @@ export const Statistics = ({}: ParamsType) => {
           <UserIcon size={width >= 630 ? "35px" : "22px"} color={active1} />
         </ContentImg>
         <Content>
-          <h2>Total Users</h2>
-          <p>100</p>
+          <h2>{table} desabilitadas</h2>
+          <p>{total.totalDataDisabled}</p>
         </Content>
       </Card>
     </Container>
