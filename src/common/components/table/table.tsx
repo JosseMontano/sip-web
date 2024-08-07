@@ -8,12 +8,17 @@ import {
   thirdMandatoryColor,
 } from "../../constants/colors";
 
-
-
 const Container = styled.div`
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
   padding: 20px;
   background-color: ${firstMandatoryColor};
+`;
+
+const Subtitle = styled.p`
+  font-size: 0.8em;
+  color: ${active1};
+  font-weight: bold;
+  cursor: pointer;
 `;
 
 const TableStyle = styled.table`
@@ -27,6 +32,9 @@ const TableStyle = styled.table`
     color: ${thirdMandatoryColor};
     text-align: left;
     border-bottom: 1px solid #dddddd;
+    th {
+      text-transform: capitalize;
+    }
   }
 
   th,
@@ -53,34 +61,43 @@ const StatusStyled = styled.td<{ active: boolean }>`
   }
 `;
 
-type ParamsType = {};
-export const Table = ({}: ParamsType) => {
+type ParamsType = {
+  data: unknown[];
+  cols: string[];
+  title: string;
+  subtitle: string;
+  createCompany: () => void;
+};
+
+export const Table = ({ data, cols, title, subtitle, createCompany }: ParamsType) => {
   return (
     <Container>
-      <h2>Todos los usuarios</h2>
+      <h2>{title}</h2>
+      <Subtitle onClick={()=>createCompany()}>{subtitle}</Subtitle>
       <TableStyle>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Points</th>
-            <th>Status</th>
+            {cols.map((col) => (
+              <th>{col}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Dom</td>
-            <td>6000</td>
-            <StatusStyled active={true}>
-              <span>Active</span>
-            </StatusStyled>
-          </tr>
-          <tr>
-            <td>Melissa</td>
-            <td>5150</td>
-            <StatusStyled active={false}>
-              <span>Inactive</span>
-            </StatusStyled>
-          </tr>
+          {data.map((user: any, index) => (
+            <tr key={index}>
+              {cols.map((col) => (
+                <>
+                  {col === "active" ? (
+                    <StatusStyled active={user[col]}>
+                      <span>{user[col] ? "Active" : "Inactive"}</span>
+                    </StatusStyled>
+                  ) : (
+                    <td key={col}>{user[col]}</td>
+                  )}
+                </>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </TableStyle>
     </Container>
