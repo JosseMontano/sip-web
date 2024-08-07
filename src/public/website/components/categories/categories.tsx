@@ -21,7 +21,6 @@ const SubContainer = styled.div`
   width: 100%;
   margin-top: 20px;
 `;
-
 const Categories = () => {
     const img= "https://img.freepik.com/vector-gratis/ilustracion-arte-dibujos-animados-aislado-queso_56104-624.jpg"
   return (
@@ -29,7 +28,7 @@ const Categories = () => {
       <span>Elección de los Clientes</span>
       <h2>Categorías Populares</h2>
       <SubContainer>
-        <Card
+        <Card 
           imageUrl={img}
           categoryTitle="Platillo Principal"
           categoryQuantityPlaces="(10 lugares)"
