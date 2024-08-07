@@ -48,7 +48,7 @@ const TableStyle = styled.table`
 
 const StatusStyled = styled.td<{ active: boolean }>`
   padding: 10px;
-
+  cursor: ${(props) => (props.active ? "pointer" : "default")};
   span {
     display: block;
     border: 1px solid ${(props) => (props.active ? active1 : inactive1)};
@@ -66,14 +66,15 @@ type ParamsType = {
   cols: string[];
   title: string;
   subtitle: string;
-  createCompany: () => void;
+  createData: () => void;
+  deleteData: (id: number) => void;
 };
 
-export const Table = ({ data, cols, title, subtitle, createCompany }: ParamsType) => {
+export const Table = ({ data, cols, title, subtitle, createData, deleteData }: ParamsType) => {
   return (
     <Container>
       <h2>{title}</h2>
-      <Subtitle onClick={()=>createCompany()}>{subtitle}</Subtitle>
+      <Subtitle onClick={()=>createData()}>{subtitle}</Subtitle>
       <TableStyle>
         <thead>
           <tr>
@@ -83,16 +84,16 @@ export const Table = ({ data, cols, title, subtitle, createCompany }: ParamsType
           </tr>
         </thead>
         <tbody>
-          {data.map((user: any, index) => (
+          {data.map((v: any, index) => (
             <tr key={index}>
               {cols.map((col) => (
                 <>
-                  {col === "active" ? (
-                    <StatusStyled active={user[col]}>
-                      <span>{user[col] ? "Active" : "Inactive"}</span>
+                  {col === "available" ? (
+                    <StatusStyled active={v[col]} onClick={()=>deleteData(v.id)}>
+                      <span>{v[col] ? "Active" : "Inactive"}</span>
                     </StatusStyled>
                   ) : (
-                    <td key={col}>{user[col]}</td>
+                    <td key={col}>{v[col]}</td>
                   )}
                 </>
               ))}

@@ -1,17 +1,13 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
 import styled from "@emotion/styled";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { createCompany, deleteCompany, getCompanies } from "./api/companyApi";
 import CompanyForm from "./components/form";
 import { CompanyResponse } from "./interface/companyRes";
 import { Statistics } from "../../common/components/statistics/statistics";
 import { Table } from "../../common/components/table/table";
-import ButtonJSX from "../../common/components/button/button";
 import Modal from "../../common/components/modal/modal";
 import { CompanyDTO } from "./interface/companyDTO";
-import { companySchema } from "./validations/company";
 
 const Container = styled.div`
   display: flex;
@@ -32,13 +28,6 @@ const Company = () => {
     queryFn: () => getCompanies(),
   });
 
-  /*   const { mutate } = useMutation({
-    mutationFn: deleteCompany,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["companies"] });
-    },
-  }); */
-
   const { mutate } = useMutation({
     mutationFn: createCompany,
     onSuccess: () => {
@@ -46,14 +35,20 @@ const Company = () => {
     },
   });
 
-  const cols = ["name", "primaryColor", "secondaryColor"];
+  const { mutate: mutateToDelete } = useMutation({
+    mutationFn: deleteCompany,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["companies"] });
+    },
+  });
+
+  const cols = ["name", "primaryColor", "secondaryColor", "available"];
 
   const [isModalOpen, setModalOpen] = useState(false);
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
 
   const onSubmit = (data: CompanyDTO) => {
-    console.log(data);
     mutate(data);
   };
 
@@ -71,7 +66,10 @@ const Company = () => {
             data={companies?.data}
             title="Todas las compañias"
             subtitle="Añadir una nueva compañia"
-            createCompany={openModal}
+            createData={openModal}
+            deleteData={(id: number) => {
+              mutateToDelete(id);
+            }}
           />
         </>
       )}
@@ -79,16 +77,8 @@ const Company = () => {
       <Modal
         isOpen={isModalOpen}
         onClose={closeModal}
-        children={<CompanyForm onSubmit={onSubmit}/>}
+        children={<CompanyForm onSubmit={onSubmit} />}
       />
-
-      {/*       <button
-            onClick={() => {
-              mutate(company.id);
-            }}
-          >
-            delete
-          </button> */}
     </Container>
   );
 };

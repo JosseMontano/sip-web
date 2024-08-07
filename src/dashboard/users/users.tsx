@@ -10,7 +10,7 @@ const Container = styled.div`
 
 type ParamsType = {};
 const Users = ({}: ParamsType) => {
-  const cols = ["name", "points", "active"];
+  const cols = ["name", "points", "available"];
   const users = [
     { name: "Dom", points: 6000, active: true },
     { name: "Melissa", points: 5150, active: false },
@@ -23,7 +23,7 @@ const Users = ({}: ParamsType) => {
         data={users}
         title="Todos los usuarios"
         subtitle="Añadir un nuevo usuario"
-        createCompany={() => alert("create user")}
+        createData={() => alert("create user")}
       />
     </Container>
   );
