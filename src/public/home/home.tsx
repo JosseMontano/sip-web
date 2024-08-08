@@ -14,11 +14,13 @@ const Home = () => {
   const [activeComponent, setActiveComponent] = useState<string | null>(null);
 
   return (
-    <Container>
+    <div>
       <Header onButtonClick={setActiveComponent} />
-      {activeComponent === "Todos" && <Example1 />}
-      {activeComponent === "Empresas Afiliadas" && <Example2 />}
-    </Container>
+      <Container>
+        {activeComponent === "Todos" && <Example1 />}
+        {activeComponent === "Empresas Afiliadas" && <Example2 />}
+      </Container>
+    </div>
   );
 };
 
