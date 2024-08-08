@@ -1,6 +1,7 @@
 import Categories from "./components/categories/categories";
 import Header from "./components/header/header";
-import Products from "./components/products/products";
+//import Products from "./components/products/products";
+import QuickForm from "./components/quickForm/quickForm";
 
 
 const Website = () => {
@@ -10,7 +11,9 @@ const Website = () => {
     <div>
       <Header />
       <Categories />
-      <Products />
+      {/*<Products />*/}
+
+      <QuickForm />
     </div>
   );
 };
