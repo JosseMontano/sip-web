@@ -28,7 +28,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40%;
+  width: 35%;
 
   @media (max-width: 768px) {
     width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */

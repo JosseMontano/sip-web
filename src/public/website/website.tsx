@@ -10,6 +10,7 @@ import Categories from "./components/categories/categories";
 import Header from "./components/header/header";
 //import Products from "./components/products/products";
 import QuickForm from "./components/quickForm/quickForm";
+import Comments from "./components/comments/comments";
 
 /* const Input = styled.input<{ error?: string }>`
   border: 1px solid ${(props) => (props.error ? "red" : "black")};
@@ -51,10 +52,22 @@ const Website = () => {
         }
       /> */}
       <Header />
-      <Categories />
+      {/*<Categories />*/}
       {/*<Products />*/}
-
-      <QuickForm />
+      <Comments
+        title="TESTLICLOS"
+        announcement="Por que la paja es saludable? En que casos es viable un trasnoche?"
+        description="I had the pleasure of dining at Foodi last night, andI'm still raving about the experience! The attention todetail in presentation and service was impeccable"
+        scoreTitle="Comentarios Vistos"
+        rating="0.0"
+        quantity="(2.0k Gatos)"
+        CImage1="https://secrecyjewels.es/blog/wp-content/uploads/2022/10/esencia-de-una-persona.jpg"
+        CImage2="https://img.freepik.com/foto-gratis/cierre-dientes-hombre-moreno-sonriendo_1187-5800.jpg"
+        CImage3="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBrDpzWSWvT8WQKdSxpdEaoev3e0uixuPvdw&s"
+        speechText="Me pasas el chorizo?"
+        speechImage=""
+      />
+      {<QuickForm />}
     </div>
   );
 };
