@@ -71,6 +71,7 @@ const Example2 = () => {
                         imageSrc={"https://www.peru.travel/Contenido/General/Imagen/es/616/1.1/hoja-de-coca.jpg"}
                         title={"Coca"}
                         description={data.description}
+                        handleRedirectToPage={() => console.log('Redirect to page')}
                     />
                 ))}
             </GridContainer>
