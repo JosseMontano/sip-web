@@ -15,9 +15,8 @@ const Container = styled.div`
 `;
 
 const MainImage = styled.img`
-  width: 250px;
-  height: 250px;
-  margin-right: 1.5rem;
+  width: 350px;
+  height: 350px;
 
   @media (max-width: 768px) {
     margin-right: 0;
@@ -39,6 +38,7 @@ const TextContainer = styled.div`
 
 const Title = styled.h3`
   margin: 0;
+  font-size: 1.8rem;
 `;
 
 const Description = styled.p`
@@ -66,7 +66,7 @@ const Information = ({ imageSrc, title, description, schedule }: InformationProp
             <TextContainer>
                 <Title>{title}</Title>
                 <Description>{description}</Description>
-                <Schedule><strong>Horario:</strong> {schedule}</Schedule>
+                <Schedule> {schedule} <strong>Contactanos</strong></Schedule>
             </TextContainer>
         </Container>
     );

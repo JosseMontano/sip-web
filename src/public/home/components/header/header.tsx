@@ -6,7 +6,7 @@ import StarIcon from "../../../../assets/icons/star";
 import ButtonOption from "./buttonOption/buttonOption";
 import Navbar from "./navbar/navbar";
 import Information from "./information/information";
-
+import HeaderImg from "../../assets/header.png"
 
 const ContainerHead = styled.div`
   background-color: #EDEDED; /* Color de fondo */
@@ -43,7 +43,7 @@ type HeaderProps = {
 };
 
 const Header: React.FC<HeaderProps> = ({ onButtonClick }) => {
-    const [activeButton, setActiveButton] = useState<string | null>(null);
+    const [activeButton, setActiveButton] = useState<string | null>("Todos");
 
     const handleClick = (buttonId: string) => {
         setActiveButton(buttonId);
@@ -52,13 +52,13 @@ const Header: React.FC<HeaderProps> = ({ onButtonClick }) => {
 
     return (
         <ContainerHead>
-            <Navbar title="La Pizza de Don Cangrejo" />
+            <Navbar title="SIVI" />
             
             <Information
-                    imageSrc="https://cdn3.emoji.gg/emojis/MrKrabs.png"
-                    title="Don Cangrejo"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque, neque id pellentesque laoreet, orci nisl varius velit, id luctus mi turpis ut dui. Nullam feugiat eget eros non rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque, neque id pellentesque laoreet."
-                    schedule="Lunes a Viernes de 9am a 5pm"
+                    imageSrc={HeaderImg}
+                    title="Mejore su experiencia en el restaurante"
+                    description="La solución todo en uno para que los restaurantes optimicen las operaciones, mejoren la experiencia del cliente y aumenten las ganancias."
+                    schedule="tienes alguna duda? Contactanos"
                 />
             
             <ContainerPreBody>

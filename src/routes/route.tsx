@@ -22,7 +22,7 @@ export const createRoutes = (): Route[] => {
       element: <PublicNavigation />,
       children: [
         {
-          path: "home",
+          path: "/",
           element: <Home />,
         },
         {

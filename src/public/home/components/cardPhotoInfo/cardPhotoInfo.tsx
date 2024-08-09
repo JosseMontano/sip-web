@@ -12,6 +12,7 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   background-color: white;
+  cursor: pointer;
 `;
 
 const Image = styled.img`
@@ -46,11 +47,12 @@ type CardPhotoInfoProps = {
     imageSrc: string;
     title: string;
     description: string;
+    handleRedirectToPage: () => void
 };
 
-const CardPhotoInfo: React.FC<CardPhotoInfoProps> = ({ imageSrc, title, description }) => {
+const CardPhotoInfo: React.FC<CardPhotoInfoProps> = ({ imageSrc, title, description, handleRedirectToPage }) => {
     return (
-        <Card>
+        <Card onClick={handleRedirectToPage}>
             <Image src={imageSrc} alt="Image description" />
             <Content>
                 <Title>{title}</Title>
