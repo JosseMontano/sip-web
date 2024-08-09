@@ -9,6 +9,62 @@ import pizzaEmoji from "../../assets/pizzaEmoji.png";
 import yummyEmoji from "../../assets/yummyEmoji.png";
 import smileyEmote from "../../assets/smileyEmote.png";
 
+
+//MAIN CONTAINER
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0vw;
+  margin: 0vw;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  padding-bottom: 15vw;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 4vw;
+    padding-top: 15vw;
+    padding-bottom: 15vw;
+  }
+`;
+
+//LEFT SIDE OF THE COMPONENT
+
+const LeftSide = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+
+//RIGHT SIDE OF THE COMPONENT
+
+const RightSide = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 40%;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding-top: 200px;
+  }
+`;
+
 // Componente text Globe
 const SpeechBubble = styled.div`
   position: absolute;
@@ -65,6 +121,26 @@ const SpeechBubble = styled.div`
   }
 `;
 
+
+const SpeechText = styled.p`
+  margin: 0;
+  font-size: 16px;  // Ajusta el tamaño del texto si es necesario
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  height: auto;  // Asegúrate de que el texto ocupe toda la altura del globo
+  width: auto;
+`;
+
+const SpeechImage = styled.img`
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;  // Asegura que la imagen se alinee verticalmente con el texto
+`;
+
+
 //Left and right emojis
 const Emoji1 = styled.img`
   position: absolute;
@@ -100,42 +176,7 @@ const Emoji2 = styled.img`
   }
 `;
 
-//MAIN CONTAINER
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0vw;
-  margin: 0vw;
-  width: 100%;
-  height: 100%;
-  flex-wrap: wrap;
-  padding-bottom: 15vw;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    padding: 4vw;
-    padding-top: 15vw;
-    padding-bottom: 15vw;
-  }
-`;
-
-//LEFT SIDE OF THE COMPONENT
-
-const LeftSide = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  z-index: 1;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`;
-
+//Green rectangle Background
 const Rectangle = styled.div`
   position: absolute;
   top: -3vw;
@@ -154,6 +195,7 @@ const Rectangle = styled.div`
   }
 `;
 
+//Main Left Image
 const LeftImage = styled.img`
   position: absolute;
   top: 50%;
@@ -170,24 +212,7 @@ const LeftImage = styled.img`
 `;
 
 
-//RIGHT SIDE OF THE COMPONENT
-
-const RightSide = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 40%;
-  gap: 1rem;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    padding-top: 200px;
-  }
-`;
-
+//Rightside Title
 const Title = styled.h5`
   margin: 0;
   color: ${primaryColor};
@@ -198,6 +223,7 @@ const Title = styled.h5`
   }
 `;
 
+//Right Side Announcement or Subtitle
 const Announcement = styled.h1`
   margin: 0.5rem 0;
 
@@ -206,6 +232,7 @@ const Announcement = styled.h1`
   }
 `;
 
+//Description
 const Description = styled.p`
   margin: 0;
   font-weight: bold;
@@ -216,6 +243,7 @@ const Description = styled.p`
   }
 `;
 
+//Comment images and components container
 const BottomRightSection = styled.div`
   display: flex;
   align-items: center;
@@ -227,6 +255,7 @@ const BottomRightSection = styled.div`
   }
 `;
 
+//User comment images container
 const ImageContainer = styled.div`
   display: flex;
   align-items: center;
@@ -238,6 +267,7 @@ const ImageContainer = styled.div`
   }
 `;
 
+//User comment images
 const CImage = styled.img`
   width: 3.5vw;
   height: 3.5vw;
@@ -279,7 +309,7 @@ const CImage = styled.img`
   }
 `;
 
-
+//Comment title text
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -292,6 +322,7 @@ const TextContainer = styled.div`
   }
 `;
 
+//Comment Value of rating
 const RatingContainer = styled.div`
   display: flex;
   align-items: center;
@@ -302,41 +333,27 @@ const RatingContainer = styled.div`
   }
 `;
 
-const SpeechText = styled.p`
-  margin: 0;
-  font-size: 16px;  // Ajusta el tamaño del texto si es necesario
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  height: auto;  // Asegúrate de que el texto ocupe toda la altura del globo
-  width: auto;
-`;
 
-const SpeechImage = styled.img`
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  vertical-align: middle;  // Asegura que la imagen se alinee verticalmente con el texto
-`;
-
-
+//Star Icon Rating value
 const StyledStarIcon = styled(StarIcon)`
   color: ${starColor};
   margin-right: 1vw;
 `;
 
+//Rating Value
 const Rating = styled.span`
   margin-right: 1rem;
   font-weight: bold;
 `;
 
+//Quantity of users value
 const Quantity = styled.span`
   margin: 0;
   font-weight: bold;
   color: gray;
 `;
 
+//Comment components contaienr
 const ScoreTitle = styled.h4`
   margin: 0;
 `;
